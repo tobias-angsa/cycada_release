@@ -11,10 +11,13 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import torchvision
-from tensorboardX import SummaryWriter
+from torch.utils.tensorboard import SummaryWriter
 
 from PIL import Image
 from torch.autograd import Variable
+
+import sys
+sys.path.append("/home/ubuntu/Angsa/src/cycada_release")
 
 from cycada.data.adda_datasets import AddaDataLoader
 from cycada.models import get_model

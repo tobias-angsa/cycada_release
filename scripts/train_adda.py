@@ -1,6 +1,9 @@
 import os
 from os.path import join
 
+import sys
+sys.path.append("/home/ubuntu/Angsa/src/cycada_release")
+
 from cycada.tools.train_task_net import train as train_source
 from cycada.tools.test_task_net import load_and_test_net
 from cycada.tools.train_adda_net import train_adda
@@ -14,15 +17,15 @@ np.random.seed(4325)
 ###################################
 # Set to your preferred data path #
 ###################################
-datadir = '/x/jhoffman'
+datadir = '/home/ubuntu/Angsa/data/synth2real/train'
 ###################################
 
 # Choose GPU ID
 os.environ['CUDA_VISIBLE_DEVICES'] = '1' 
 
 # Problem Params
-src = 'mnist'
-tgt = 'usps'
+src = 'synthetic_trash'
+tgt = 'real_trash'
 iteration = 1 #'no_cycle' 
 
 base_src = src.split('2')[0]
